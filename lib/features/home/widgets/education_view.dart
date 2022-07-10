@@ -12,7 +12,7 @@ class EducationView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: MediaQuery.of(context).size.width * .85,
-      height: MediaQuery.of(context).size.height * .25,
+      height: MediaQuery.of(context).size.height * .3,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,

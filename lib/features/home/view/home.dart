@@ -24,7 +24,7 @@ class Home extends StatelessWidget {
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.only(
-              top: MyPadding.venti * 3,
+              top: MyPadding.venti * 2,
               left: MyPadding.grande,
               right: MyPadding.grande),
           child: Column(

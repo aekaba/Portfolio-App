@@ -12,7 +12,7 @@ class WorkHistoryView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: MediaQuery.of(context).size.width * .85,
-      height: MediaQuery.of(context).size.height * .15,
+      height: MediaQuery.of(context).size.height * .2,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
