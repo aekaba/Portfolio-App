@@ -12,7 +12,7 @@ class MyReferencesView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: MediaQuery.of(context).size.width * .85,
-      height: MediaQuery.of(context).size.height * .2,
+      height: MediaQuery.of(context).size.height * .15,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -31,7 +31,8 @@ class MyReferencesView extends StatelessWidget {
               itemCount: myReferences.length,
               itemBuilder: (BuildContext context, int index) {
                 return InkWell(
-                  onTap: (() => print(myReferences[index].referenceTelephone)),
+                  onTap: (() =>
+                      showRefernceSheet(myReferences[index], context)),
                   child: Card(
                       color: MyColor.mediumSoft,
                       child: ListTile(
@@ -65,4 +66,26 @@ class MyReferencesView extends StatelessWidget {
       ),
     );
   }
+}
+
+showRefernceSheet(References myReferenc, BuildContext context) {
+  showModalBottomSheet(
+    backgroundColor: Colors.transparent,
+    context: context,
+    builder: (BuildContext context) {
+      return Container(
+        height: MediaQuery.of(context).size.height * .6,
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment(2, 0.5),
+            colors: [MyColor.mediumDark, MyColor.mediumSoft],
+          ),
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(40),
+          ),
+        ),
+      );
+    },
+  );
 }

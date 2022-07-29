@@ -61,7 +61,7 @@ class Home extends StatelessWidget {
                 "I became interested in software at the age of 15 thanks to my high school education. I graduated as a database programmer by learning C# and SQL languages ​​at there. Now I continue by studying software engineering at Beykent University. I'm working on developing mobile apps with Flutter.",
                 style: Theme.of(context)
                     .textTheme
-                    .bodySmall
+                    .bodyMedium
                     ?.copyWith(color: MyColor.myWhite, height: 1.2),
                 textAlign: TextAlign.center,
               ),
