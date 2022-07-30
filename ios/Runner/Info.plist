@@ -47,8 +47,14 @@
 	<array>
   		<string>https</string>
  		 <string>http</string>
+		 <string>sms</string>
+  		<string>tel</string>
 	</array>
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
+	<key>NSBonjourServices</key>
+	<array>
+   		<string>_dartobservatory._tcp</string>
+	</array>
 </dict>
 </plist>

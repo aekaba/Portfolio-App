@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/core/constants/constants.dart';
 import 'package:portfolio/core/widgets/mydivider.dart';
 import 'package:portfolio/features/home/model/references_model.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MyReferencesView extends StatelessWidget {
   const MyReferencesView({
@@ -74,7 +75,7 @@ showRefernceSheet(References myReferenc, BuildContext context) {
     context: context,
     builder: (BuildContext context) {
       return Container(
-        height: MediaQuery.of(context).size.height * .6,
+        height: MediaQuery.of(context).size.height * .4,
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topLeft,
@@ -83,6 +84,76 @@ showRefernceSheet(References myReferenc, BuildContext context) {
           ),
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(40),
+          ),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(MyPadding.venti),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Text(
+                myReferenc.referenceName,
+                style: Theme.of(context)
+                    .textTheme
+                    .headline5
+                    ?.copyWith(color: MyColor.myWhite),
+              ),
+              Text(
+                myReferenc.referenceCompany +
+                    " " +
+                    myReferenc.referencePosition,
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyLarge
+                    ?.copyWith(color: MyColor.soft),
+              ),
+              const SizedBox(
+                height: MyPadding.venti,
+              ),
+              InkWell(
+                onTap: () =>
+                    launchUrl(Uri.parse("mailto:${myReferenc.referenceMail}")),
+                child: Card(
+                  color: MyColor.mediumSoft,
+                  child: ListTile(
+                    leading: const Icon(
+                      Icons.mail,
+                      color: MyColor.soft,
+                    ),
+                    title: Text(
+                      myReferenc.referenceMail,
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodyMedium
+                          ?.copyWith(color: MyColor.myWhite),
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: MyPadding.tall,
+              ),
+              InkWell(
+                onTap: () => launchUrl(
+                    Uri.parse("tel:${myReferenc.referenceTelephone}")),
+                child: Card(
+                  color: MyColor.mediumSoft,
+                  child: ListTile(
+                    leading: const Icon(
+                      Icons.phone,
+                      color: MyColor.soft,
+                    ),
+                    title: Text(
+                      myReferenc.referenceTelephone,
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodyMedium
+                          ?.copyWith(color: MyColor.myWhite),
+                    ),
+                  ),
+                ),
+              )
+            ],
           ),
         ),
       );
