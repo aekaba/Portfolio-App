@@ -13,7 +13,7 @@ class MyReferencesView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: MediaQuery.of(context).size.width * .85,
-      height: MediaQuery.of(context).size.height * .15,
+      height: MediaQuery.of(context).size.height * .2,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -75,7 +75,7 @@ showRefernceSheet(References myReferenc, BuildContext context) {
     context: context,
     builder: (BuildContext context) {
       return Container(
-        height: MediaQuery.of(context).size.height * .4,
+        height: MediaQuery.of(context).size.height * .45,
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topLeft,
